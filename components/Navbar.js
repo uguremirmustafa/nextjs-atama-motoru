@@ -1,12 +1,33 @@
 /** @format */
 
-import Link from 'next/link';
+import React from 'react';
 
-export default function Navbar() {
+const Navbar = ({ user }) => {
   return (
-    <nav className="flex justify-between font-bold bg-blue-400 py-5 px-3 item-center">
-      <div className="font-bold text-center text-xl">prepokul atama motoru</div>
-      <button className="bg-white py-2 px-4">giris yap</button>
+    <nav className="flex justify-between item-center py-4">
+      <p className="text-2xl font-bold text-grey-800 pt-2">prepokul atama motoru</p>
+      <div className="flex">
+        {user && (
+          <div className="flex">
+            <img src={user.picture} alt="avatar" className="w-10 h-10 rounded" />
+            <Link href="#">
+              <a className="item-center py-2 px-5 text-blue-500 font-bold">{user.nickname}</a>
+            </Link>
+          </div>
+        )}
+        {user && (
+          <a href="/api/logout" className="rounded bg-blue-500 px-4 py-2 hover:bg-blue-600 text-white">
+            logout
+          </a>
+        )}
+        {!user && (
+          <a href="/api/login" className="rounded bg-blue-500 px-4 py-2 hover:bg-blue-600 text-white">
+            login
+          </a>
+        )}
+      </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

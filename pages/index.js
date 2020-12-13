@@ -5,9 +5,8 @@ import Navbar from '../components/Navbar';
 import Teacher from '../components/Teacher';
 import styles from '../styles/Home.module.css';
 import { tableSchools, minifyRecords } from './api/utils/AirtableSchools';
-import CustomSelect from '../components/CustomSelect';
+import SelectSchool from '../components/SelectSchool';
 export default function Home({ schools }) {
-  console.log(schools);
   return (
     <div>
       <Head>
@@ -18,7 +17,9 @@ export default function Home({ schools }) {
       {/* {teachers.map((teacher) => (
         <Teacher teacher={teacher} key={teacher.id} />
       ))} */}
-      <CustomSelect schools={schools} />
+      <SelectSchool schools={schools} num={1} />
+      <SelectSchool schools={schools} num={2} />
+      <SelectSchool schools={schools} num={3} />
     </div>
   );
 }
