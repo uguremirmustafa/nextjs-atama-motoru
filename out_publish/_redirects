@@ -1,0 +1,7 @@
+# Next-on-Netlify Redirects
+/  /.netlify/functions/next_index  200
+/_next/data/FLJSZPbEgd66_jZ-I2Smj/index.json  /.netlify/functions/next_index  200
+/api/getSchools  /.netlify/functions/next_api_getSchools  200
+/api/getTeachers  /.netlify/functions/next_api_getTeachers  200
+/api/utils/AirtableSchools  /.netlify/functions/next_api_utils_AirtableSchools  200
+/api/utils/AirtableTeachers  /.netlify/functions/next_api_utils_AirtableTeachers  200

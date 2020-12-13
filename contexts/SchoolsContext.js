@@ -13,6 +13,7 @@ const AppProvider = ({ children }) => {
   const contextProps = {
     schools,
     getSchoolsData,
+    submitTercih,
   };
 
   return <AppContext.Provider value={contextProps}>{children}</AppContext.Provider>;

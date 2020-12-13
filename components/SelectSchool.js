@@ -1,9 +1,6 @@
 /** @format */
-
-import React, { useContext, useState } from 'react';
-import Select from 'react-select';
+import React, { useState } from 'react';
 import AsyncSelect from 'react-select/async';
-import { AppContext } from '../contexts/SchoolsContext';
 
 export default function CustomSelect({ schools, num }) {
   const options = [];
@@ -19,6 +16,7 @@ export default function CustomSelect({ schools, num }) {
       callback(filterSchools(inputValue));
     }, 1000);
   };
+
   const [inputValue, setInputValue] = useState('');
   const handleInputChange = (newValue) => {
     const inputValue = newValue.replace(/\W/g, '');
@@ -26,7 +24,8 @@ export default function CustomSelect({ schools, num }) {
     return inputValue;
   };
   return (
-    <>
+    <div className="mb-3">
+      <h3 className="mb-1 bg-red-200 text-center p-1 rounded text-red-900">{num}. tercihiniz:</h3>
       <AsyncSelect
         instanceId
         isSearchable
@@ -35,6 +34,6 @@ export default function CustomSelect({ schools, num }) {
         cacheOptions
         onInputChange={handleInputChange}
       />
-    </>
+    </div>
   );
 }
